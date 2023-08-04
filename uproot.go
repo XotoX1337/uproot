@@ -9,6 +9,11 @@ import (
 	"runtime/debug"
 )
 
+type Uproot interface {
+	FS() *embed.FS
+	TmpDir() string
+	Files() []string
+}
 type uproot struct {
 	eFS    *embed.FS
 	files  []string
